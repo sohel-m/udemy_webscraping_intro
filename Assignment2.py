@@ -41,7 +41,7 @@ for link,section_info in zip(section_links,section_info):
         for example in examples:
             problem_statement+='\n'+example
 
-        problem_statement+='\n\n\n'
+        problem_statement+='\n\n\n'             # just to make text file more readable
         fp.write(problem_statement)
 
         qno+=1
