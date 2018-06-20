@@ -17,14 +17,14 @@ fp = open('codingbat_questions.txt','a+')
 
 for link,section_info in zip(section_links,section_info):
 
-    fp.write('\n\n\n'+section_info +'\n\n')
+    fp.write('\n\n\n'+section_info +'\n\n')     # just to make text file more readable
 
     section_page = requests.get(link,headers={'user-agent':user_agent.chrome})
     section_soup = BeautifulSoup(section_page.content,'lxml')
     div = section_soup.find('div',class_='tabc')
     question_links=[base_url + td.a['href'] for td in div.table.find_all('td')]
 
-    qno=1
+    qno=1                                       # question no in each section should begin with 1
 
     for question_link in question_links:
 
