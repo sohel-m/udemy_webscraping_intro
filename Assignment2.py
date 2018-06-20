@@ -13,7 +13,7 @@ all_divs = soup.find_all('div',class_='summ')
 section_info = [i.text for i in all_divs]
 section_links = [base_url + div.a['href'] for div in all_divs]
 
-fp = open('codingbat_questions.txt','a+')
+fp = open('codingbat_questions.txt','a+')       # file opened in append mode, no overwriting of data
 
 for link,section_info in zip(section_links,section_info):
 
